@@ -1,3 +1,4 @@
+//@dkonrad94 ez csak egy teszt
 const { Client, GatewayIntentBits, Partials, REST, Routes, Collection } = require('discord.js');
 const Discord = require('discord.js');
 const chalk = require('chalk');

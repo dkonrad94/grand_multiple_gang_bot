@@ -1,0 +1,50 @@
+# ===========================================================================
+#   __      _____      _               
+#  /_ |    / ____|    | |              
+#   | |   | (___   ___| |_ _   _ _ __  
+#   | |    \___ \ / _ \ __| | | | '_ \ 
+#   | |_   ____) |  __/ |_| |_| | |_) |
+#   |_(_) |_____/ \___|\__|\__,_| .__/ 
+#                               | |    
+#                               |_|
+#
+# Thank you for your purchase!
+# You can request a License key here: https://discord.gg/ZMgevHnKwX
+# ===========================================================================
+BOT_SETUP:
+  Token: "MTI3ODQyNzM1NTgxMTE1MTg4Mg.GmgBun.H6Ub2XNEtus8N1mo44xA5LOt_YZWfkW_VZgNKQ" #Your Bot Token (https://discord.com/developers/applications)
+  ClientID: "1278427355811151882"
+  Guild_ID: ["1212249645649235998"] # Your Server Guild ID / MAX 6
+  License: "" # License key
+  ServerOwner: # Server Guild ID / Server Owner ID
+  - "1212249645649235998": "863849601295450132"
+
+
+
+BOT_ACTIVITY:
+  "1212249645649235998":
+    SelectedActivity: "CustomActivity" # FivemStatus, TicketStats, CustomActivity
+    status: "online" # online, dnd, idle, invisible
+    FivemStatusActivity:
+      ip_address: "37.221.209.191"
+      type: "Playing"
+      gametype: "gta5f" # List: https://github.com/gamedig/node-gamedig/blob/master/GAMES_LIST.md
+      interval: 5000 # (30000 ms)
+      online_activity: "{onlineEmoji} {playerCount}/{maxPlayers} játékos online"
+      offline_activity: "Server Offline"
+    TicketStatsActivity:
+      type: 'Watching'
+      Interval: 10
+      activities:
+      - '{total-tickets} ticket'
+      - '{total-users} felhasználó'
+      - '{total-messages} üzenet'
+    CustomActivityConfig:
+    - interval: 5000
+      type: "Watching"
+      text: "⭐ Grand World RP szerver! "
+    - interval: 5000
+      type: "Listening"
+      text: "💌 Hívd meg barátaidat is! discord.gg/GrandWorldRP"
+
+

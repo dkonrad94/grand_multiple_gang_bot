@@ -1,0 +1,33 @@
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  "1212249645649235998": "1278465590444556288" # add channel id for guild / FIRST GUILD ID: SEDOND CHANNEL ID
+
+# ===========================================================================
+#  EMBED SETTINGS
+# ===========================================================================
+EMBED_SETTINGS:
+  Color: "#3498db" # default embed color
+  AddColor: "#2ecc71" # add role embed color
+  RemoveColor: "#e74c3c" # remove role embed color
+  Title: "Szerepkör frissítve" # embed title
+  Description: "{user} szerepkörei módosultak a {guildName} szerveren {date}-kor." # embed description / use {user}, {guildName}, {date}
+  AddedRoles: "Hozzáadott rangok" # added roles field
+  RemoveRoles: "Eltávolított rangok" # removed roles field
+  PreviousRoles: "Korábbi rangok" # previous roles field
+  fields:
+    User:
+      Value: "Felhasználó" # user field name
+    Username:
+      Value: "Felhasználó neve" # username field name
+    DiscordID:
+      Value: "Discord ID" # discord id field name
+  Author: "Felhasználó neve: " # author prefix
+  Footer: "Role Update Log - {guildName}" # footer text / use {guildName}
+
+# ===========================================================================
+#  DATE FORMATS
+# ===========================================================================
+DATE_FORMATS:
+  Default: "YYYY-MM-DD HH:mm:ss" # default date format / you can midify this format

@@ -1,0 +1,73 @@
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true
+  LogChannel:
+    "1212249645649235998": "1261752308644057088"
+
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  MessageDelete: "#e74c3c"
+  DeletedImage: "#e74c3c"
+  DeletedMedia: "#e74c3c"
+  DeletedFile: "#e74c3c"
+  Default: "#3498db"
+
+
+# ===========================================================================
+#  MESSAGES
+# ===========================================================================
+MESSAGES:
+  DeleteWithTextAndAttachment:
+    Title: "Üzenet törölve"
+    Description: "A felhasználó törölt egy üzenetet, ami tartalmazott szöveget és egy csatolmányt."
+  DeleteWithAttachmentOnly:
+    Title: "Üzenet törölve"
+    Description: "A felhasználó törölt egy üzenetet, ami csak egy csatolmányt tartalmazott."
+  DeleteWithTextOnly:
+    Title: "Üzenet törölve"
+    Description: "A felhasználó törölt egy üzenetet, ami csak szöveget tartalmazott."
+  DeletedAttachment:
+    Title: "Törölt csatolmány"
+    Description: "A felhasználó törölt egy vagy több csatolmányt egy üzenetből."
+  Fields:
+    Field_1:
+      Title: "Felhasználó"
+      Value: "<@{user}>"
+    Field_2:
+      Title: "Felhasználónév"
+      Value: "{username}"
+    Field_3:
+      Title: "Felhasználó ID"
+      Value: "{userID}"
+    Field_4:
+      Title: "Csatorna"
+      Value: "<#{channel}>"
+    Field_5:
+      Title: "Törlés ideje"
+      Value: "{deletionTime}"
+    Field_6:
+      Title: "Törölt üzenet"
+      Value: "{deletedMessage}"
+    Field_7:
+      Title: "Csatolmány neve"
+      Value: "{attachmentsName}"
+  Footer: "Üzenet törlés log - {guildName}"
+
+
+# ===========================================================================
+#  BUTTONS
+# ===========================================================================
+BUTTONS:
+  OpenAttachment: "Csatolmány megnyitása"
+  Download: "Letöltés"
+
+# ===========================================================================
+#  DATE FORMATS
+# ===========================================================================
+DATE_FORMATS:
+  Default: "YYYY-MM-DD HH:mm:ss"

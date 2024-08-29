@@ -1,0 +1,113 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS SETTINGS
+# ===========================================================================
+PERMISSIONS:
+  Commands: "ban" # Parancs neve
+  Description: "Felhasználó bannolása a szerverről" # Parancs leírása
+  Options:
+    Target:
+      Name: "target" # A célzott felhasználó kiválasztásához
+      Description: "Felhasználó"
+    Duration:
+      Name: "duration" # Az időtartam opció neve
+      Description: "A bannolás időtartama"
+  CommandsGuildPermissions:
+    "1212249645649235998": ["1212412926871207987", "1212451853099474974"] # add multiple permission roles if needed
+
+# ===========================================================================
+#  BAN REASON MODALS
+# ===========================================================================
+REASON_MODALS:
+  Enabled: true # Ha igaz, akkor a ban parancs indoklását kérni fogja
+  ReasonModal:
+    Title: "Ban okának megadása"
+    Description: "Indok megadása a felhasználó bannolásához"
+
+# ===========================================================================
+#  BAN DURATIONS
+# ===========================================================================
+BAN_DURATIONS_LABELS:
+  "3 days": "3 nap"
+  "7 days": "7 nap"
+  "Permanent": "Végleges kitiltás"
+
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true
+  LogChannel:
+    "1212249645649235998": ["1261752453330767885"] # Guild és log channel ID párosítások
+
+# ===========================================================================
+#  LANGUAGE
+# ===========================================================================
+TRANSLATIONS:
+  Errors:
+    NoPermission: "Nincs jogosultságod ehhez a parancshoz!"
+    BanError: "Hiba történt a felhasználó bannolása közben."
+    HigherPermission: "Ezt a felhasználót nem tudod bannolni magasabb jogosultság miatt."
+    ExecutionError: "Hiba történt a felhasználó bannolása közben."
+  Success:
+    BanSuccess: "{userTag}-ot sikeresen bannoltad a szerveren."
+  Log:
+    Title: " • Felhasználó bannolva | Parancs: [Ban]"
+    DmSuccess: "Felhasználót sikeresen értesítettük."
+    DmFailed: "Felhasználó értesítése sikertelen."
+    Fields:
+      Field_1:
+        Title: "Moderátor"
+        Value: "<@{moderator}>"
+      Field_2:
+        Title: "Moderátor neve"
+        Value: "{moderatorName}"
+      Field_3:
+        Title: "Moderátor ID"
+        Value: "{moderatorID}"
+      Field_4:
+        Title: "Bannolt tag"
+        Value: "<@{targetUser}>"
+      Field_5:
+        Title: "Bannolt neve"
+        Value: "{targetUserName}"
+      Field_6:
+        Title: "Bannolt ID"
+        Value: "{targetUserID}"
+      Field_7:
+        Title: "Szerver neve"
+        Value: "{guildName}"
+      Field_8:
+        Title: "Lejárat"
+        Value: "{unbanDate}"
+      Field_9:
+        Reason: "Indoklás"
+        Value: "{reason}"
+    Footer: "Ban Log - {guildName}"
+  DM:
+    Title: " • Értesítés"
+    Description: "{guildName} szerverről fiókod bannolva lett."
+    Fields:
+      Field_1:
+        Title: "Moderátor"
+        Value: "{moderatorName}"
+      Field_2:
+        Title: "Szerver"
+        Value: "{guildName}"
+      Field_3:
+        Title: "Lejárat"
+        Value: "{unbanDate}"
+      Field_4:
+        Title: "Indoklás"
+        Value: "{reason}"
+    Footer: "{guildName}"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  Default: "#2c3e50"
+  BanSuccess: "#27AE60"
+  BanFail: "#E74C3C"
+  Log: "#2e4053"
+  DM: "#2e4053"
+  DMFailed: "#626567"

@@ -1,0 +1,62 @@
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true
+  LogChannel:
+    "1212249645649235998": "1261752371319672908"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  MessageUpdate: "#2980B9"
+  DeletedImage: "#2ecc71"
+  DeletedMedia: "#a93226"
+  DeletedFile: "#ecf0f1"
+
+# ===========================================================================
+#  MESSAGES
+# ===========================================================================
+MESSAGES:
+  MessageUpdate:
+    Title: "Üzenet szerkesztve"
+    Description: "<@{userId}> - ({userTag}) - ({discordId}) \nmódosította az üzenetet {timestamp}-kor."
+    Author: "Üzenet szerzője: "
+  DeletedImage:
+    Title: "Törölt kép szöveges üzenetből"
+    Description: "<@{userId}> - ({userTag}) - ({discordId}) \ntörölt egy képet az üzenetből {timestamp}-kor."
+    Author: "Üzenet szerzője: "
+  DeletedMedia:
+    Title: "Törölt média szöveges üzenetből"
+    Description: "<@{userId}> - ({userTag}) - ({discordId}) \ntörölt egy média tartalmat az üzenetből {timestamp}-kor."
+    Author: "Üzenet szerzője: "
+  DeletedFile:
+    Title: "Törölt csatolmány szöveges üzenetből"
+    Description: "<@{userId}> - ({userTag}) - ({discordId}) \ntörölt egy csatolmányt az üzenetből {timestamp}-kor."
+    Author: "Üzenet szerzője: "
+  Fields:
+    OriginalMessage:
+      Title: "Eredeti üzenet"
+    NewMessage:
+      Title: "Új üzenet"
+  Footer: "Message update Log - {guildName}"
+
+# ===========================================================================
+#  BUTTONS
+# ===========================================================================
+BUTTONS:
+  JumpToMessage:
+    Label: "Ugrás az üzenethez"
+  OpenImage:
+    Label: "Kép megnyitása"
+  DownloadVideo:
+    Label: "Letöltés"
+  DownloadAttachment:
+    Label: "Letöltés"
+
+# ===========================================================================
+#  DATE FORMATS
+# ===========================================================================
+DATE_FORMATS:
+  Default: "YYYY-MM-DD HH:mm:ss"

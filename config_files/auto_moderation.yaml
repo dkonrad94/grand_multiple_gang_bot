@@ -1,0 +1,142 @@
+BLACKLISTED_WORDS_SETTINGS:
+  Enabled: true
+  WarningEmbed:
+    SendWarnToChannel: true
+    EmbedColor: "#e74c3c"
+    Title: "Figyelmeztetés | Feketelistás szavak"
+    Description: "{user} üzeneted feketelistás szavakat tartalmaz. \n\n> Kérünk ne használj tiltott kifejezéseket a szerveren!"
+    Footer:
+      Text: "{guildName} Feketelistás szavak"
+  ExceptRoleID:
+    "1212249645649235998": ""
+
+
+CAPITAL_LETTERS:
+  Enabled: true
+  AcceptedPercentage: 75 # if you leave blank, it will be 30
+  WarningEmbed:
+    SendWarnToChannel: true
+    EmbedColor: "#f5b041"
+    Title: "Figyelmeztetés | Túlzott nagybetűk"
+    Description: "{user} üzeneted túl sok nagybetűt tartalmaz. \n\n> Kérünk kerüld a túlzott CAPS LOCK használatát az üzenetedben!"
+    Footer:
+      Text: "{guildName} Túlzott nagybetűk"
+  ExceptRoleID:
+    "1212249645649235998": "1212451853099474974"
+
+
+REPEATED_CHARACTERS:
+  Enabled: true
+  AcceptRepeatedCharacters: 3 # (on words) if you leave blank, it will be 3
+  WarningEmbed:
+    SendWarnToChannel: true
+    EmbedColor: "#e74c3c"
+    Title: "Figyelmeztetés | Ismétlődő karakterek"
+    Description: "{user} üzeneted túl sok ismétlődő karakter(t) tartalmaz. \n\n> Kérünk kerüld az ismétlődő karakterek használatát az üzenetedben!"
+    Footer:
+      Text: "{guildName} Ismétlődő karakterek"
+  ExceptRoleID:
+    "1212249645649235998": "1212451853099474974"
+
+
+AVOID_TAGS:
+  Enabled: true
+  ForbiddenRoles: # Azok a rangok, amelyeket nem lehet pingelni
+    "1212249645649235998": ["1212412926871207987", "1261764072735637515", "1212451853099474974", "1212451860804403250", "1261756339860934709", "1261756459075764336", "1212449789724336159", "1212449806417666048", "1212449817561931857", "1212451862348038184", "1261768790673457162"]
+  ForbiddenUsers: # Azok a felhasználók, akiket nem lehet pingelni
+    "1212249645649235998": []
+  WarningEmbed:
+    SendWarnToChannel: true
+    DeleteAuthorMessage: false
+    EmbedColor: "#3498db"
+    Title: "Figyelmeztetés | Rang, Felhasználó pingelése"
+    Description: "{user} Kérünk, ne jelöld meg ezt a felhasználót/rangot."
+    Footer:
+      Enabled: true
+      Text: "{guildName}" # can replace server name with {guildName}
+    TimestampEnabled: true
+  ExceptRoleID: # If the user has one of these roles, the user will be exempt from the rule.
+    "1212249645649235998": "1212451862348038184"
+
+
+# ===========================================================================
+# LOGS SETTINGS
+# ===========================================================================
+LOGS_SETTINGS:
+  LogTypes:
+    BlacklistedWords:
+      Enabled: true
+      EmbedColor: "#1d1d1d"
+      Title: "Tiltott szavak Log"
+      Description: "> **- Beküldte:** {user} ({username}) [{userid}] \n feketelistás szót tartalmaz. \n"
+      Fields:
+        Field1:
+          Title: "Üzenet"
+          Value: "{blacklisted-word}"
+          Inline: false
+        Field2:
+          Title: "Feketelistás szó"
+          Value: "{founded-word}"
+          Inline: false
+        Field3:
+          Title: "Csatorna"
+          Value: "{channel}"
+          Inline: false
+      Footer:
+        Text: "{guildName} Feketelistás szavak Log"
+      Channels:
+        "1212249645649235998": "1278448256149356637"
+    CapitalLetters:
+      Enabled: true
+      EmbedColor: "#5e99ff"
+      Title: "Túlzott CAPS LOCK Log"
+      Description: "> **- MesBeküldte:** {user} ({username}) [{userid}] \n Túlzott CAPS LOCK karaktert tartalmaz az üzenet.\n"
+      Fields:
+        Field1:
+          Title: "Üzenet"
+          Value: "{message}"
+          Inline: false
+        Field2:
+          Title: "Csatorna"
+          Value: "{channel}"
+          Inline: false
+      Footer:
+        Text: "{guildName} Túlzott CAPS LOCK Log"
+      Channels:
+        "1212249645649235998": "1278450449036607619"
+    RepeatedCharacters:
+      Enabled: true
+      EmbedColor: "#f5b041"
+      Title: "Ismétlődő karakterek Log"
+      Description: "> **- Beküldte:** {user} ({username}) [{userid}] \n Túl sok az ismétlődő karakter az üzenetben.\n"
+      Fields:
+        Field1:
+          Title: "Üzenet"
+          Value: "{message}"
+          Inline: false
+        Field2:
+          Title: "Csatorna"
+          Value: "{repeated-characters}" #words with repeated characters
+          Inline: false
+      Footer:
+        Text: "{guildName} Ismétlődő karakterek Log"
+      Channels:
+        "1212249645649235998": "1278452101013573682"
+    ForbiddenTags:
+      Enabled: true
+      EmbedColor: "#85c1e9"
+      Title: "Tiltott rang, Felhasználó Log"
+      Description: "> **- Beküldte:** {user} ({username}) [{userid}] \n\n Tiltott rang vagy felhasználó lett megjelölve.\n"
+      Fields:
+        Field1:
+          Title: "Üzenet"
+          Value: "{message}"
+          Inline: false
+        Field2:
+          Title: "Csatorna"
+          Value: "{channel}"
+          Inline: false
+      Footer:
+        Text: "{guildName} Tiltott rang, Felhasználó Log"
+      Channels:
+        "1212249645649235998": "1278452920098230366" # Valódi csatorna ID és log csatorna ID       

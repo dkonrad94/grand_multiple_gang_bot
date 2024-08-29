@@ -1,0 +1,101 @@
+# ===========================================================================
+#  LOG CHANNELS | All fields are required!!!
+# ===========================================================================
+LOGS_SETTINGS:
+  LogChannel:
+    "1212249645649235998": "1278457010467373250"
+
+# ===========================================================================
+#  ARCHIVE CHANNELS
+# ===========================================================================
+ArchiveChannels:
+  Images:
+    "1212249645649235998": "1278457069477040248"
+  Videos:
+    "1212249645649235998": "1278457099130765427"
+  Attachments:
+    "1212249645649235998": "1278457186435072051"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  LogMessages: "#f1c40f"
+  VideoTooLarge: "#566573"
+  ArchiveMedia: "#AF7AC5"
+  ArchiveAttachment: "#76D7C4"
+  ImageAttachment: "#3498db"
+  AttachmentTooLarge: "#EC7063"
+
+# ===========================================================================
+#  MESSAGES
+# ===========================================================================
+MESSAGES:
+  VideoTooLarge:
+    Description: "25 MB fölötti videó tartalmat Youtube vagy más videó megosztó felületre töltsd fel és úgy küldd be!"
+  AttachmentTooLarge:
+    Description: "25 MB fölötti fájlt nem lehet feltölteni. Kérlek, használd a Google Drive vagy más fájlmegosztó szolgáltatást!"
+  ArchiveMedia:
+    Author: "Média tartalmat beküldte: "
+    Title: "Archive média"
+    Description: "Beküldve ebbe a csatornába: <#{channelId}> \n> **Beküldte: ** {user} - ({username}) - ({discordId}) \n\n> **Fájl neve:** {fileName} \n> **Beküldés ideje:** {timestamp}"
+  ArchiveAttachment:
+    Author: "Csatolmányt beküldte: "
+    Title: "Archive csatolmány"
+    Description: "Beküldve ebbe a csatornába: <#{channelId}> \n> **Beküldte: ** {user} - ({username}) - ({discordId}) \n\n> **Fájl neve:** {fileName} \n> **Beküldés ideje:** {timestamp}"
+  ImageAttachment:
+    Author: "Képet beküldte: "
+    Title: "Archive kép"
+    Description: "Beküldve ebbe a csatornába: <#{channelId}> \n> **Beküldte: ** {user} - ({username}) - ({discordId}) \n\n> **Kép neve:** {fileName} \n> **Beküldés ideje:** {timestamp}"
+  Fields:
+    Enabled: false
+    User:
+      Title: "Felhasználó"
+      Value: "<@{userId}>"
+    Username:
+      Title: "Felhasználónév"
+      Value: "{userTag}"
+    DiscordId:
+      Title: "Discord ID"
+      Value: "{userId}"
+    FileName:
+      Title: "File név"
+      Value: "{fileName}"
+    Timestamp:
+      Title: "Beküldés ideje"
+      Value: "{timestamp}"
+  Footer: "Archive Log - {guildName}"
+
+# ===========================================================================
+#  BUTTONS
+# ===========================================================================
+BUTTONS:
+  JumpToMessage:
+    Label: "Ugrás az üzenethez"
+  DownloadImage:
+    Label: "Megnyitás böngészőben"
+  DownloadAttachment:
+    Label: "Letöltés"
+  DownloadVideo:
+    Label: "Letöltés"
+
+# ===========================================================================
+#  DATE FORMATS
+# ===========================================================================
+DATE_FORMATS:
+  Default: "YYYY-MM-DD HH:mm:ss"
+
+# ===========================================================================
+#  ATTACHMENT AND VIDEO UPLOAD SIZE LIMIT
+# ===========================================================================
+MEDIA_UPLOAD_SIZE_LIMIT:
+  Value: 25 # MB
+
+ATTACHMENT_SIZE_LIMIT:
+  Value: 25 # MB
+
+# ===========================================================================
+#  DELETE DELAY
+# ===========================================================================
+WARNING_DELETE_DELAY:
+  Value: 60000 # milliseconds (1 minute)

@@ -1,0 +1,91 @@
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true
+  LogChannelID:
+    "1212249645649235998": "1278470368402735145"
+    # Add more guild IDs and log channels as needed
+
+
+# ===========================================================================
+#  MESSAGES
+# ===========================================================================
+TRANSLATE:
+  VoiceJoin:
+    Title: "Tag belépett a voice csatornába"
+    Fields:
+      Field_1:
+        Title: "Profil"
+        Value: "<@{userId}>"
+      Field_2:
+        Title: "Felhasználónév"
+        Value: "{userTag}"
+      Field_3:
+        Title: "Discord ID"
+        Value: "{userId}"
+      Field_4:
+        Title: "Voice csatorna"
+        Value: "{voiceChannelURL}"
+      Field_5:
+        Title: "Belépés ideje"
+        Value: "{userJoinedChannelAt}"
+    footer: "Voice csatorna log - {guildName}"
+  VoiceLeave:
+    Title: "Tag kilépett a voice csatornából"
+    Fields:
+      Field_1:
+        Title: "Profil"
+        Value: "<@{userId}>"
+      Field_2:
+        Title: "Felhasználónév"
+        Value: "{userTag}"
+      Field_3:
+        Title: "Discord ID"
+        Value: "{userId}"
+      Field_4:
+        Title: "Voice csatorna"
+        Value: "{voiceChannelURL}"
+      Field_5:
+        Title: "Kilépés ideje"
+        Value: "{userLeavedChannelAt}"
+    footer: "Voice log - {guildName}"
+  VoiceSwitch:
+    Title: "Tag áthelyezve egy másik voice csatornába"
+    Fields:
+      Field_1:
+        Title: "Profil"
+        Value: "<@{userId}>"
+      Field_2:
+        Title: "Felhasználónév"
+        Value: "{userTag}"
+      Field_3:
+        Title: "Discord ID"
+        Value: "{userId}"
+      Field_4:
+        Title: "Áthelyezés innen"
+        Value: "{voiceChannelURL}"
+      Field_5:
+        Title: "Áthelyezés Ide"
+        Value: "{voiceChannelURL}"
+      Field_6:
+        Title: "Áthelyezés ideje"
+        Value: "{userSwitchedChannelAt}"
+    footer: "Voice log - {guildName}"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  VoiceJoin: "#00FF00"
+  VoiceLeave: "#FF0000"
+  VoiceSwitch: "#0000FF"
+
+# ===========================================================================
+#  DATE FORMATS
+# ===========================================================================
+DATE_FORMATS:
+  Default: "YYYY-MM-DD HH:mm:ss"
+  Join: "YYYY-MM-DD HH:mm:ss"
+  Leave: "YYYY-MM-DD HH:mm:ss"
+  Switch: "YYYY-MM-DD HH:mm:ss"

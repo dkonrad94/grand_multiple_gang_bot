@@ -1,0 +1,49 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS (MODAL) SETTINGS
+# ===========================================================================
+PERMISSIONS:
+  Commands: "setnickname" # /setnickname
+  Description: "Állíts be egy új becenevet egy felhasználónak a szerveren" # command description
+  UserOption:
+    Name: 'user' # DON'T CHANGE!!!
+    Description: 'Felhasználó' # user option description
+    Required: true # true or false
+  CommandsGuildPermissions:
+    "1212249645649235998": ["1212412926871207987"] # add multiple permission roles if needed ['1274989008241557580', '127498900824155125']
+
+MODAL_SETTINGS:
+  Title: 'Új Becenév Beállítása' # modal title
+  Nickname_Input:
+    CustomId: 'nicknameInput' # DON'T CHANGE!!!
+    Label: 'Új Becenév' # input label
+    Placeholder: 'Írja be az új becenevet' # input placeholder
+    Required: false # true or false
+  Reset_Input:
+    CustomId: 'resetNicknameInput' # DON'T CHANGE!!!
+    Label: 'Visszaállítás' # input label
+    Placeholder: 'Írd be: "reset" a becenév visszaállításához' # input placeholder
+    Required: false # DON'T CHANGE!!!
+
+# ===========================================================================
+# LOGS SETTINGS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true # true or false
+  EmbedColor: "#5e99ff" # embed color
+  ResetEmbedColor: "#ff6666" # reset embed color
+  Title: "• Becenév (szerver profil) megváltoztatva" # log title
+  Description: "> {staff} | {staffuserName} megváltoztatta {user} szerver nevét. \n\n**• Információ** \n> **Régi név:** {useroldName} | {userName} \n> **Új név:** {userNewName} \n> **Felhasználó ID:** {userId}" # log description / use {staff}, {staffuserName}, {user}, {useroldName}, {userNewName}, {userName}, {userId}
+  ResetDescription: "> {staff} | {staffuserName} visszaállította {user} szerver nevét az alapértelmezettre. \n\n**• Információ** \n> **Felhasználó:** {userName} \n> **Felhasználó ID:** {userId}" # reset log description / use {staff}, {staffuserName}, {user}, {userName}, {userId}
+  Footer: "{guildName}" # {guildName} - replace your server name
+  Channels:
+    "1212249645649235998": "1278470180087005184" # add channel id for guild / FIRST GUILD ID: SEDOND CHANNEL ID
+
+
+# ===========================================================================
+# MORE TRANSLATE
+# ===========================================================================
+INTERACTION_MESSAGES:
+  Error: "Hiba történt a parancs végrehajtása közben!" # error message
+  NoPermission: "Nincs jogosultságod a parancs használatához!" # no permission message
+  SelfNicknameChangeError: "Nem tudod megváltoztatni a saját becenevedet!" # self nickname cannot change
+  NicknameChangeSuccess: "A becenév sikeresen megváltoztatva erre: {nickname}" # nickname change success message

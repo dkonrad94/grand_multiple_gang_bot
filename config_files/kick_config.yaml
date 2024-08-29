@@ -1,0 +1,71 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS SETTINGS
+# ===========================================================================
+PERMISSIONS:
+  Commands: "kick" # /kick
+  Description: "Tag kirúgása a szerverről" # command description
+  Options:
+    User:
+      Name: "user" # DON'T CHANGE!!!
+      Description: "Felhasználó" # user description
+    ReasonModal:
+      Title: "Kick Indok" # modal title
+      Label: "Indok" # modal label
+      Placeholder: "Írja be az indokot a kickeléshez" # modal placeholder
+      Required: true # if false not required add reason in modal
+  CommandsGuildPermissions:
+    "1212249645649235998": ["1212412926871207987", "1212451853099474974"] # add multiple permission roles if needed ['1274989008241557580', '127498900824155125']
+
+
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true # if true logs will be enabled
+  LogChannel:
+    "1212249645649235998": "1278464977971183699"
+    # Add more guild IDs and log channels as needed
+
+
+# ===========================================================================
+#  LANGUAGE
+# ===========================================================================
+TRANSLATE:
+  Errors:
+    NoPermission: "Nincs jogosultságod ehhez a parancshoz."
+    UserNotFoound: "A felhasználó nem található a szerveren."
+    CannotKick: "Nem kickelheted ezt a felhasználót, mert magasabb vagy egyenlő jogosultsággal rendelkezik."
+    KickFailed: "Hiba történt a felhasználó kickelése közben."
+  Success:
+    KickInitiated: "<@{userId}> sikeresen kickelve lett."
+  Log:
+    Field:
+      Name: "• Információk:"
+      Value: "> **User:** <@{userId}> \n> **UserID:** {userId} \n> **UserTag:** {userTag} \n> \n> **KickedBy:** <@{kickerId}> \n> **KickerName:** {kickerName} \n> **KickerID:** {kickerId} \n\n**• Reason:** \n> {reason}\n"
+    Title: "Felhasználó kickelve a szerverről"
+    DmSuccessDescription: "Felhasználót sikeresen értesítettük."
+    Reason: "Kirúgás indoklása"
+    Time: "Kirúgás időpontja"
+    KickedBy: "Kickelő mdoderátor"
+    User: "Felhasználó"
+    UserID: "Felhasználó ID"
+    UserTag: "Felhasználó név"
+    KickerID: "Moderátor ID" # Hozzáadva a kickelő ID azonosító
+    KickerName: "Moderátor neve" # Hozzáadva a kickelő felhasználó név
+    Footer: "{guildName}"
+    DmFailedDescription: "Nem sikerült üzenetet küldeni a kickelt felhasználónak."
+  DM:
+    Title: "Kilettél rúgva a szerverről"
+    Description: "Ki lettél rúgva a(z) {guildName} szerverről {kickTime}-kor {kickerName} moderátor által.\n\n> **Indoklás:** \n• {reason}"
+    Field:
+      Name: "Megjegyzés"
+      Value: "**Ha a jövőben vissza szeretnél térni a szerverre, kérjük, vedd figyelembe a közösségi irányelveket és tartsd tiszteletben a szerver szabályait.**"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  Default: "#3498db "
+  DmSucces: "#2ecc71"
+  DmFailed: "#e74c3c"
+  DmMessage: "#e74c3c"

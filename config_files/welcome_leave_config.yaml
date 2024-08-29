@@ -1,0 +1,61 @@
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true
+  WelcomeLogChannelID:
+    "1212249645649235998": "1261752226016268358"
+  LeaveLogChannelID:
+    "1212249645649235998": "1261752226016268358"
+    # Add more guild IDs and log channels as needed
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+embed_colors:
+  member_join: "#3498db"
+  member_leave: "#e74c3c"
+
+# ===========================================================================
+#  MESSAGES
+# ===========================================================================
+TRANSLATE:
+  MemberJoin:
+    Title: "Új tag csatlakozott"
+    Description: "A felhasználó csatlakozott a szerverhez."
+    Fields:
+      Field_1:
+        Title: "Profil"
+        Value: "<@{userId}>"
+      Field_2:
+        Title: "Discord ID"
+        Value: "{userId}"
+      Field_3:
+        Title: "Felhasználónév"
+        Value: "{userTag}"
+      Field_4:
+        Title: "Profil létrehozva"
+        Value: "{userCreatedAt}"
+      Field_5:
+        Title: "Csatlakozás ideje"
+        Value: "{userJoinedAt}"
+    footer: "Welcome log - {guildName}"
+  MemberLeave:
+    Title: "Tag kilépett"
+    Description: "<@{userId}> | ({userTag}) | ({userId}) kilépett a szerverről."
+    Field:
+      Field_1:
+        Title: "Csatlakozás ideje"
+        Value: "{userJoinedAt}"
+      Field_2:
+        Title: "Kilépés ideje"
+        Value: "{userLeftAt}"
+    footer: "Leave log - {guildName}"
+
+# ===========================================================================
+#  SHOW DATE FORMATS IN EMBED MESSAGE
+# ===========================================================================
+DATE_FORMATS:
+  Default: "YYYY-MM-DD HH:mm:ss"
+  Join: "YYYY-MM-DD HH:mm:ss"
+  Leave: "YYYY-MM-DD HH:mm:ss"

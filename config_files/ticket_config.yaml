@@ -1,0 +1,502 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS SETTINGS
+# ===========================================================================
+PERMISSIONS:
+  Commands: "ticketpanel" # /ticketpanel
+  Description: "Ticket panel megnyitása"
+  SubmittedMessage:
+    Embed:
+      Error: "Hiba történt a parancs végrehajtása közben!"
+      NoPermission: "Nincs jogosultságod a parancs használatához!"
+      Success: "Ticket panel sikeresen beküldeve!" # Message when the ticket panel is submitted
+  CommandsGuildPermissions:
+    "1212249645649235998": ["863849601295450132"]
+
+
+# ===========================================================================
+# TICKET PANEL SETTINGS
+# ===========================================================================
+TICKET_PANEL:
+  Embed:
+    Author:
+      IconURL: "{guildIcon}" # Use a custom image URL, or replace server icon with: {guildIcon}
+      Name: "{guildName} Ticket" # You can use {guildName} variable
+    Title: "{guildName} Ticket" # You can use {guildName} variable
+    Description: "> Ha kérdésed van, kattints a megnyitni kívánt jegy típusának megfelelő kategóriájára."
+    Color: "#f1c40f" # Hex color code, leave blank to use bot default
+    PanelImage: "https://images-ext-1.discordapp.net/external/hphTU_OZYWigx96NUQMBQJ21W7dnJA4FWhstrrSvVsU/https/i.imgur.com/5FSwmVv.png?format=webp&quality=lossless" # Recommended Size: 450x103, you can also use the default one, Leave blank for none
+    Thumbnail: "{guildIcon}" # Use a custom image URL, or replace server icon with: {guildIcon}
+    Timestamp: true
+    Footer:
+      CustomIconURL: "{guildIcon}" # Use a custom image URL, ONLY WORKS IF TEXT IS NOT BLANK!, Leave blank to disable
+      text: "Support System {guildName}" # You can use {guildName} variable
+
+
+# ===========================================================================
+# TICKET SYSTEM SETTINGS
+# ===========================================================================
+SETTINGS:
+  SelectMenu: true # Use a dropdown menu for creating tickets instead of buttons?
+  MentionSupportRoles: true # Mention the support roles in the ticket?
+  "1261837559240065124": ["1261837559240065125", "1261837559240065126"] # Szerver ID alapján a szerepkörök ID-i
+  MaxTickets: 5 # Maximum megnyitható jegyek száma
+  DeleteTime: 5 # Amount of time before a ticket gets deleted in seconds (after close/delete button has been pressed)
+  UserCanReopen: true # Ha "viewClosedTicket" és "UserCanReopen" is true, a felhasználó újra nyithatja a jegyet az archívumból
+
+ARCHIVE_SETTINGS:
+  Enabled: false # Ha false, azonnal törölje a jegy csatornát
+  ArchiveCategoryID: "1263914559312498699" # Archiválási kategória ID-je
+  RenameClosedTicket: true # Lezárt jegy átnevezése
+  ClosedTicketName: "closed-{channel-name}"
+  UserCanClose: false # A felhasználó, aki megnyitotta a jegyet, csak akkor zárhatja le, ha az archiválás nincs engedélyezve
+  ViewClosedTicket: false # Ha false, a felhasználó nem láthatja a lezárt (archivált) csatornát
+  SendMessages: false # Ha true, a felhasználók üzeneteket küldhetnek a lezárt (archivált) jegyekben
+  ReadMessage: false # Ha true, a felhasználók olvashatják az üzeneteket a lezárt (archivált) jegyekben
+  MoveToArchiveCategory: true # Ha true, akkor a jegy áthelyezése az archív kategóriába
+  ArchiveCategory: # Archív kategória ID-k guild ID alapján
+    "1261837559240065124": "1263914559312498699" # Guild ID és hozzá tartozó archive kategória ID
+
+
+# ===========================================================================
+# TICKET CLAIMING SYSTEM
+# ===========================================================================
+CLAIMING_SYSTEM:
+  Enabled: true # Enable ticket claiming system?
+  SupportCanUnclaim: false # If false, add role who can unclaim ticket
+  UnclaimRole:
+    "1261837559240065124": ["1261837559240065125"] # Only Highest role can unclaim ticket
+  DefaultSupportPerms:
+    ViewChannel: true
+    SendMessages: false
+  MoveTicketToSupport: true # If "true" then the bot will automatically create a category with the name of the support and move the ticket to it when claimed
+  SupportCategoryName: "{support-category-name}-Jegyek" # You can use {support-category-name} variable
+  NotRequested:
+    Name: "Begyűjtötte"
+    Value: "Ezt a jegyet még nem gyűjtötte be senki!"
+  RequesterField:
+    Title: "Begyűjtötte"
+    Value: "<@{memberId}> ({memberTag})"
+
+
+# ===========================================================================
+# LOGS SETTINGS
+# ===========================================================================
+LOGS_SETTINGS:
+  LogTypes:
+    ArchiveTranscript:
+      Enabled: true
+      EmbedColor: "#5e99ff"
+      Title: "Jegy archiválva"
+      Description: "A jegyről mentést készített <@{userId}> | ({userTag}) \n\n> **Jegy neve:** {channelName} \n> **Jegy kategóriája:** {categoryName} \n> **Csatorna:** {channel}" # Nincs még sehol a kódba beépítve
+      Channels:
+        "1261837559240065124": ""
+    UserAdd:
+      Enabled: true
+      EmbedColor: "#f5b041"
+      Title: "Felhasználó hozzáadva"
+      Description: "<@{userId}> | ({userTag}) hozzáadta <@{addedUserId}> | ({addedUser})-t a a jegyhez. \n\n> **Ticket Creator:** <@{openedBy}> \n\n> **Jegy neve:** {channelName} \n> **Jegy kategóriája:** {categoryName} \n> **Csatorna:** {channel}"
+      Channels:
+        "1261837559240065124": "1278338703256981504"
+    UserRemove:
+      Enabled: true
+      EmbedColor: "#5e99ff"
+      Title: "Felhasználó eltávolítva"
+      Description: "<@{userId}> | ({userTag}) eltávolította <@{removedUserId}> | ({removedUser})-t a ticketből. \n\n> **Ticket Creator:** <@{openedBy}> \n\n> **Jegy neve:** {channelName} \n> **Jegy kategóriája:** {categoryName} \n> **Csatorna:** {channel}"
+      Channels:
+        "1261837559240065124": "1278321120365510760"
+    UserAddToBlacklist:
+      Enabled: true
+      EmbedColor: "#a569bd"
+      Title: "Felhasználó feketelistára helyezve"
+      Description: "> <@{userId}> | ({userTag}) feketelistára helyezte <@{blacklistedUserId}> | ({blacklistedUser})-t."
+      Channels:
+        "1261837559240065124": "1278354431192338573"
+    UserRemovedFromBlacklist:
+      Enabled: true
+      EmbedColor: "#a569bd"
+      Title: "Felhasználó eltávolítva feketelistáról"
+      Description: "> <@{userId}> | ({userTag}) eltávolította <@{blacklistedUserId}> | ({blacklistedUser})-t a feketelistáról."
+      Channels:
+        "1261837559240065124": "1278354431192338573"
+    RenameTicket:
+      Enabled: true
+      EmbedColor: "#f5b041"
+      Title: "Jegy átnevezve"
+      Description: "A jegyet átnevezte <@{userId}> | ({userTag}) \n\n**• Jegy Információ**\n > **Ticket Creator:** <@{openedBy}> \n> **Új név:** {newName} \n> **Jegy kategóriája:** {categoryName} \n> **Csatorna:** {channel}" # Nincs még sehol a kódba beépítve
+      Channels:
+        "1261837559240065124": "1276385874820599860"
+    ClaimTicket:
+      Enabled: false
+      EmbedColor: "#5e99ff"
+      Title: "Jegy begyűjtve"
+      Description: "A jegyet begyűjtötte <@{userId}> | ({userTag}) \n\n> **Ticket Creator:** <@{openedBy}> \n> **Jegy neve:** {channelName} \n> **Jegy kategóriája:** {categoryName} \n> **Csatorna:** {channel}" # Nincs még sehol a kódba beépítve
+      Channels:
+        "1261837559240065124": ""
+    UnclaimTicket:
+      Enabled: false
+      EmbedColor: "#5e99ff"
+      Title: "Jegy begyűjtés visszavonva"
+      Description: "A jegy begyűjtését visszavonta <@{userId}> | ({userTag}) \n\n> **Ticket Creator:** <@{openedBy}> \n> **Jegy neve:** {channelName} \n> **Jegy kategóriája:** {categoryName} \n> **Csatorna:** {channel}" # Nincs még sehol a kódba beépítve
+      Channels:
+        "1261837559240065124": "" # Nincs csatorna megadva, mert nincs engedélyezve
+    ArchiveTicket:
+      Enabled: true
+      EmbedColor: "#5e99ff"
+      Title: "Jegy Archiválás Log"
+      Description: "A jegyet archiválta lett <@{userId}> | ({userTag}) \n\n> **Jegy neve:** {channelName} \n> **Jegy kategóriája:** {categoryName} \n>**Csatorna** {channel}" # Nincs még sehol a kódba beépítve
+      Channels:
+        "1261837559240065124": ""
+    DeleteTicket:
+      Enabled: true
+      EmbedColor: "#45b39d"
+      Title: "• Jegy törlés Log"
+      Description: "> Ticket has been deleted by {closedBy} \n\n> **Claimed By:** {claimedBy} \n\n**• Jegy Információ** \n> **Ticket Creator:** <@{openedBy}> \n> **Ticket Name:** {channelName} \n> **Ticket Category:** {openedCategory} \n> **Ticket Channel ID:** {channelId} \n\n> **Total Messages:** {messageCount}"
+      IfNotClaimed: "Not claimed by anyone."
+      Channels:
+        "1261837559240065124": "1271942223377727579"
+
+
+# ===========================================================================
+# TICKET CATEGORIES SETTINGS
+# ===========================================================================
+Category1: # First category cannot be disabled
+  ButtonColor: "red"
+  Name: "Segítségkérés"
+  Description: "Amennyiben segítséget igényelsz..."
+  CreatedChannelName: "segitsegkeres-{tag}"
+  CategoryID: "1263553157158404247"
+  TopicMessage: "Nyitotta: {username} | Kategória: {category-name}"
+  MenuEmoji: "🙋‍♂️"
+  TicketMessageTitle: "Jegy - ({category})"
+  EmbedColor: "#F4D03F"
+  TicketMessage: "> Köszönjük, hogy nyitottál Ticketet a **Segítségkérés** kategóriában..\n > ⏱ Kérünk légy türelemmel egy illetékes személy érkezéséig.\n\n > ✍ Addig is írd meg nekünk, hogy miben szeretnél segítséget kérni!"
+  SupportRoles: ["1262003279983017994"]
+
+Category2:
+  Enabled: true
+  ButtonColor: "green"
+  Name: "Teszt goomb"
+  Description: "Hibákkal kapcsolatos bejelentés..."
+  CreatedChannelName: "hibajelentes-{tag}"
+  CategoryID: "1263553157158404247"
+  TopicMessage: "Nyitotta: {username} | Kategória: {category-name}"
+  MenuEmoji: "😠"
+  TicketMessageTitle: "Jegy - ({category})"
+  EmbedColor: "#a569bd"
+  TicketMessage: "> Köszönjük, hogy nyitottál Ticketet a **Hibajelentés** kategóriában..\n > ⏱ Kérünk légy türelemmel egy illetékes személy érkezéséig.\n\n > ✍ Addig is írd meg nekünk, hogy miben szeretnél segítséget kérni!"
+  SupportRoles: ["1262003279983017994"]
+  Questions: # Maximum 5 kérdés adható meg kategóriánként
+    Enabled: true
+    List:
+    - customId: "ub_steamname" # Egyedi azonosító
+      required: true # A kérdés kötelező?
+      question: "Steam neved?" # A kérdés szövege
+      style: "Short" # Stílus: "Short" (rövid) vagy "Paragraph" (bekezdés)
+
+    - customId: "ub_reason" # Egyedi azonosító
+      required: true # A kérdés kötelező?
+      question: "Miért kaptad a kitiltást?" # A kérdés szövege
+      style: "Short" # Stílus: "Short" (rövid) vagy "Paragraph" (bekezdés)
+
+    - customId: "ub_end" # Egyedi azonosító
+      required: true # A kérdés kötelező?
+      question: "Mikor jár le a kitiltásod?" # A kérdés szövege
+      style: "Short" # Stílus: "Short" (rövid) vagy "Paragraph" (bekezdés)
+
+    - customId: "ub_accept" # Egyedi azonosító
+      required: true # A kérdés kötelező?
+      question: "Jogosnak érzed a kitiltásod, ha nem miért?" # A kérdés szövege
+      style: "Paragraph" # Stílus: "Short" (rövid) vagy "Paragraph" (bekezdés)
+
+
+Category3:
+  Enabled: false
+  ButtonColor: "gray"
+  Name: "Hármaaaaas kategory"
+  Description: "Működik vajon?..."
+  CreatedChannelName: "category3-{tag}"
+  CategoryID: "1263553157158404247"
+  TopicMessage: "Nyitotta: {username} | Kategória: {category-name}"
+  MenuEmoji: "😠"
+  TicketMessageTitle: "Jegy - ({category})"
+  EmbedColor: "#F4D03F"
+  TicketMessage: "> Köszönjük, hogy nyitottál Ticketet a **Teszt** kategóriában..\n > ⏱ Kérünk légy türelemmel egy illetékes személy érkezéséig.\n\n > ✍ Addig is írd meg nekünk, hogy miben szeretnél segítséget kérni!"
+  SupportRoles: ["1262003279983017994"]
+
+Category4:
+  Enabled: false
+  ButtonColor: "blurple"
+  Name: "Hiliho"
+  Description: "Teszt 4"
+  CreatedChannelName: "teszt4-{tag}"
+  CategoryID: "1263553157158404247"
+  TopicMessage: "Nyitotta: {username} | Kategória: {category-name}"
+  MenuEmoji: "😠"
+  TicketMessageTitle: "Jegy - ({category})"
+  EmbedColor: "#a569bd"
+  TicketMessage: "> Köszönjük, hogy nyitottál Ticketet a **Hibajelentés** kategóriában..\n > ⏱ Kérünk légy türelemmel egy illetékes személy érkezéséig.\n\n > ✍ Addig is írd meg nekünk, hogy miben szeretnél segítséget kérni!"
+  SupportRoles: ["1262003279983017994"]
+
+Category5:
+  Enabled: false
+  ButtonColor: "red"
+  Name: "Másik gomb"
+  Description: "Teszt 5"
+  CreatedChannelName: "teszt5-{tag}"
+  CategoryID: "1263553157158404247"
+  TopicMessage: "Nyitotta: {username} | Kategória: {category-name}"
+  MenuEmoji: "😠"
+  TicketMessageTitle: "Jegy - ({category})"
+  EmbedColor: "#a569bd"
+  TicketMessage: "> Köszönjük, hogy nyitottál Ticketet a **Hibajelentés** kategóriában..\n > ⏱ Kérünk légy türelemmel egy illetékes személy érkezéséig.\n\n > ✍ Addig is írd meg nekünk, hogy miben szeretnél segítséget kérni!"
+  SupportRoles: ["1262003279983017994"]
+
+Category6:
+  Enabled: false
+  ButtonColor: "green"
+  Name: "Másik gomb 77777"
+  Description: "Ez a 6os gomb"
+  CreatedChannelName: "teszt5-{tag}"
+  CategoryID: "1263553157158404247"
+  TopicMessage: "Nyitotta: {username} | Kategória: {category-name}"
+  MenuEmoji: "😠"
+  TicketMessageTitle: "Jegy - ({category})"
+  EmbedColor: "#a569bd"
+  TicketMessage: "> Köszönjük, hogy nyitottál Ticketet a **Másik gomb 77777 teszt** kategóriában..\n > ⏱ Kérünk légy türelemmel egy illetékes személy érkezéséig.\n\n > ✍ Addig is írd meg nekünk, hogy miben szeretnél segítséget kérni!"
+  SupportRoles: ["1262003279983017994"]
+
+
+# ===========================================================================
+# SEND DM MESSAGE WHEN CLOSED TICKET
+# =========================================================================== 
+TICKET_DM_SETTINGS:
+  Enabled: true
+  Transcript:
+    Enabled: true
+    MinMessage: 5
+  Embed:
+    Title: "Jegy bezárva"
+    Description: "> A jegyed bezárásra került a **{guildName}** szerveren."
+    Color: "#3498DB"
+    Field:
+      Title: "• Jegy Információ"
+      Value: "> **Kategória:** {openedCategory} \n> **Begyűjtötte:** {claimedBy} \n> **Bezárta:** {closedBy} \n> **Üzenetek száma:** {messageCount}\n\n> **Értékelés:** {reviewText}"
+      Value2: "> **Visszajelzés:**"
+      NoAddedReview: "Nincs értékelés"
+      IfNotClaimed: "Nem gyűjtötte be senki."
+    Timestamp: true
+    FooterText: "{guildName}"
+
+
+# ===========================================================================
+# TICKET REVIEW SYSTEM
+# ===========================================================================
+REVIEW_SETTINGS:
+  Enabled: false
+  reviewChannelID:
+    "1261837559240065124": "1271940842638151690" # Proper indentation here
+  reviewMessage: "> Kérjük értékeld munkánkat 1-től 5-ig terjedő skálán."
+  reviewPlaceholder: "Értékelés kiválasztása..."
+  reviewEmoji: "⭐"
+  OptionsLabel:
+    1: "1️⃣ Csillag"
+    2: "2️⃣ Csillag"
+    3: "3️⃣ Csillag"
+    4: "4️⃣ Csillag"
+    5: "5️⃣ Csillag"
+
+REVIEW_MODAL:
+  InputStyle: "Paragraph" # "Paragraph" or "Short"
+  Title: "Értékelés"
+  Label: "Kérjük értékeld munkánkat visszajelzéseddel."
+  MinLength: 10
+  MaxLength: 200
+
+REVIEW_MESSAGE:
+  Title: "• Információ"
+  AuthorName: "⭐ Bérkező Értékelés"
+  Color: "#2ecc71"
+  DescriptionTemplate: |
+    **Értékelés:** {starEmojis} | {rating}/5
+    **Értékelés leírás:** {reviewMessage}
+  Divider: "~~--------------------------------------------------------~~"
+  InformationTitle: "• Információk:"
+  Fields:
+    User: "Felhasználó:"
+    UserID: "Felhasználó ID"
+    OpenCategory: "Nyitott Kategória"
+    ClaimedBy: "Begyűjtötte"
+  ClaimedByDefault: "Ez a jegy nem lett begyűjtve."
+  FooterText: "{guildName}"
+
+
+# ===========================================================================
+# RENAME SETTINGS
+# ===========================================================================
+RENAME_SETTINGS:
+  Enabled: true # Enable ticket renaming system for support roles
+  Command: "renameticket" # /renameticket
+  Description: "Jegy csatorna átnevezése"
+  OptionName: "newname"
+  SupportRoles:
+    "1261837559240065124": ["1274989008241557580"] # Only users with these roles can rename tickets
+  CustomName: true # Allow support roles to set custom names for tickets
+  Modal:
+    Title: "Jegy átnevezése"
+    Description: "Kérjük add meg az új nevet a jegynek."
+    OptionName: "custom-rename"
+    SupportRoles:
+      "1261837559240065124": ["1261837559240065125"] # Only users with these roles can rename tickets
+
+
+# ===========================================================================
+# OTHER_COMMANDS_SETTINGS
+# ===========================================================================
+OTHER_COMMANDS:
+  RemoveMember:
+    Command: "removemember" # /removemember
+    CmdDescription: "Felhasználó eltávolítása a jegyből"
+    OptDescription: "Felhasználó kiválasztása"
+    SupportRoles:
+      "1261837559240065124": ["1261837559240065125"] # Only users with these roles can remove member from tickets
+  AddMember:
+    Command: "addmember" # /addmember
+    CmdDescription: "Felhasználó hozzáadása a jegyhez"
+    OptDescription: "Felhasználó kiválasztása"
+    SupportRoles:
+      "1261837559240065124": ["1261837559240065125"] # Only users with these roles can add member to tickets
+  AddToBlacklist:
+    Command: "addtoblacklist" # /addtoblacklist
+    CmdDescription: "Felhasználó feketelistára helyezése"
+    OptDescription: "Felhasználó kiválasztása"
+    SupportRoles:
+      "1261837559240065124": ["1261837559240065125"] # Only users with these roles can add users to blacklist
+  RemoveFromBlacklist:
+    Command: "removefromblacklist" # /removefromblacklist
+    CmdDescription: "Felhasználó feketelistáról való eltávolítása"
+    OptDescription: "Felhasználó kiválasztása"
+    SupportRoles:
+      "1261837559240065124": ["1261837559240065125"] # Only users with these roles can remove users from blacklist
+  DeleteForceTicket:
+    Command: "deleteticket" # /deleteticket
+    Description: "Jegy törlése"
+    SupportRoles:
+      "1261837559240065124": ["1261837559240065125"] # Only users with these roles can delete tickets
+
+
+# ===========================================================================
+# TRANSLATIONS
+# ===========================================================================
+TRANSLATE:
+  ChooseCategory: "Válassz egy kategóriát..."
+  BlacklistedRoleMessage: "Feketelistán szerepelsz így nem nyithatsz jegyet"
+  ErrorTitle: "Hiba történt"
+  OpenTicketErrorDesc: "Hiba történt a nyitott jegyek ellenőrzése során."
+  MaxTicketReached: "Elérted a maximális jegyek számát!"
+  OpenedTicketNumber: "Maximum nyitható jegyek száma {maxTickets} / Jelenleg nyitott jegyek száma {openTickets}"
+  TicketNotClaimed: "Ezt a jegyet még nem gyűjtötte be senki!"
+  TicketClaimed: "Ezt a jegyet {supportMember} igényelte."
+  TicketClaimedError: "Hiba történt a jegy igénylés közben!"
+  TicketCreatedTitle: "Jegy létrehozva"
+  TicketCreatedDesc: "A jegyed sikeresen létrehozva itt: {channel}"
+  TicketCreatedFooterText: "{username} | {category-name}"
+  ErrorCreatingTicket: "Hiba történt a jegy létrehozása közben!"
+  NotFoundThisTicket: "Nem található ez a jegy a rendszerben!"
+  NotFoundDataToThisTicket: "Nem sikerült megtalálni a szerver adatait a jegyhez."
+  NotFoundGuildData: "Hiba: Nem találom a szervert."
+  NoValidData: "Nem található érvényes értékelési adat, vagy az értékelés már leadásra került."
+  NoPermission: "Nincs jogosultságod ehhez a művelethez!"
+  NoPermissionToClose: "Nincs jogosultságod a jegy bezárásához!"
+  NoPermissionToDeleteTicket: "Nincs jogosultságod a jegy törléséhez!"
+  NoPermissionToClaim: "Nincs jogosultságod a jegy igényléséhez!"
+  NoPermissionTuUnclaim: "Nincs jogosultságod a jegy igénylésének visszavonásához!"
+  NoPermissionToUnclaim2: "Csak az vonhatja vissza a jegyet aki igényelte..."
+  ErrorWhileUpdateTicket: "Hiba történt a jegy frissítése közben!"
+  UnknownCategory: "Ismeretlen kategória: {categoryKey}"
+  CategoryDisabled: "A(z) {categoryName} kategória jelenleg ki van kapcsolva."
+  TicketDeletion: "Jegy törlése"
+  DeleteTicketDesc: "Jegy törlésre kerül `{time}` másodperc múlva..."
+  CannotDeleteTicket: "Ez a csatorna nem jegy csatorna, így nem törölhető!"
+  NotATicketChannel: "Ez a csatorna nem jegy csatorna!"
+  CannotRemoveCreator: "Nem távolíthatod el a jegy létrehozóját a jegyből!"
+  UserNotFound: "A felhasználó nem található a szerveren."
+  AddMemberSuccess: "<@{userID}> | {userName} sikeresen hozzáadva a csatornához."
+  MemberAlreadyAdded: "{userName} már hozzá lett adva ehhez a csatornához."
+  MemberNotInChannel: "<@{userID}> | {userName} nem található ebben a csatornában."
+  RemoveMemberSuccess: "<@{userID}> | {userName} sikeresen eltávolítva a jegyből."
+  BlacklistCheckError: "Hiba történt a feketelista ellenőrzése közben."
+  AlreadyBlacklisted: "<@{userID}> | {userName} már szerepel a feketelistán."
+  BlacklistAddSuccess: "<@{userID}> | {userName} sikeresen hozzáadva a feketelistához."
+  BlacklistAddError: "Hiba történt a felhasználó hozzáadása közben a feketelistához."
+  UserNotBlacklisted: "<@{userID}> | {userName} nem szerepel a feketelistán."
+  UserRemovedFromBlacklist: "<@{userID}> | {userName} sikeresen eltávolítva a feketelistáról."
+  BlacklistRemoveError: "Hiba történt a felhasználó eltávolítása közben a feketelistáról."
+  TicketArchived: "Jegy Archiválva"
+  TicketArchivedDesc: "Ezt a jegyet archiválta (bezárta) <@{userId}> | ({userTag})"
+  NoArchivedCategory: "Nincs archiválási kategória beállítva!"
+  NotValidArchiveType: "Nem található archíválási kategória, vagy invalid típus!"
+  NoAvailableCategories: "Nincs elérhető kategória."
+  NotFoundReviewChannel: "Nem található értékelési csatorna!"
+  ThankYouForReview: "Köszönjük az értékelést!"
+  ReviewProcessingError: "Hiba történt az értékelés feldolgozása során."
+  NoPermissionToReopen: "Nincs jogosultságod a jegy újranyitásához!"
+  ErrorPermissionCheck: "Hiba történt a jogosultságok ellenőrzése közben!"
+  TicketReopenedTitle: "Jegy újranyitva"
+  TicketReopenedDesc: "Ezt a jegyet újranyitotta <@{userId}> | ({userTag})"
+  TicketClosedTitle: "Jegy bezárva"
+  NoPermissionToCreateTranscript: "Nincs jogosultságod a jegy transcript létrehozásához."
+  TranscriptGenerated: "Transcript elkészült és csatolva lett a jegyhez."
+  TranscriptRequestedByTitle: "Transcriptot kérte"
+  TranscriptRequestedBy: "<@{userId}> | ({userTag})"
+  RenameSuccess: "A csatorna nevét sikeresen módosítottad erre: [{channelName}]({channelUrl})"
+  CountdownMessage: "Ezt a csatornát jelenleg nem tudod átnevezni, mert cooldown alatt van. Próbáld újra {minutes} perc és {seconds} másodperc múlva."
+  ErrorWhileRenaming: "Cooldown alatt vagyunk, vagy ez a csatorna nem jegy csatorna."
+  UnexpectedError: "Hiba történt a művelet során!"
+
+
+
+# ===========================================================================
+# BUTTONS SETTINGS
+# ===========================================================================
+BUTTONS:
+  closeTicketButton:
+    Label: "Jegy bezárása"
+    emoji: "🗑"
+  reopenTicketButton:
+    Label: "Jegy újranyitása"
+    emoji: "🔓"
+  transcriptTicketButton:
+    Label: "Jegy mentése"
+    emoji: "📜"
+  deleteTicketButton:
+    Label: "Törlés"
+    emoji: "🗑"
+  claimTicketButton:
+    Label: "Begyűjtés"
+    emoji: "🙌"
+  ticketClaimed:
+    Label: "Begyűjtve"
+    emoji: "🙌"
+  unclaimTicketButton:
+    Label: "Begyűjtés visszavonása"
+    emoji: "↩️"
+  channelLinkButton:
+    Label: "Csatorna link"
+    emoji: "🔗"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  Error: "#e74c3c"
+  Success: "#2ecc71"
+  Info: "#3498DB"
+  Warning: "#f5b041"
+  Blacklisted: "#23272a"
+
+
+# Valid Button colors:
+# Primary = blurple
+# Secondary = gray
+# Success = green
+# Danger = red

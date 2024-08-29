@@ -1,0 +1,29 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS 
+# ===========================================================================
+PERMISSIONS:
+  Commands: "ping" # /ping
+  Description: "Discord API és a BOT válaszidejének lekérdezése" # command description
+  CommandsGuildPermissions:
+    "1212249645649235998": ["1212412926871207987", "1212451853099474974"] # add multiple permission roles if needed ['1274989008241557580', '127498900824155125']
+
+# ===========================================================================
+#  LANGUAGE
+# ===========================================================================
+INTERACTION_MESSAGES:
+  Errors:
+    Title: "❌ Hiba" # error title
+    No_permission: "Nincs megfelelő jogosultságod a parancs végrehajtásához." # no permission message
+  Success:
+    Pinging: "Pinging..." # pinging message
+    Title: "🏓 Pong!" # interaction title
+    BotPing: "Bot Ping" # bot ping title
+    ApiPing: "Discord API Ping" # discord api ping title
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  default: "#5e99ff"
+  error: "#e74c3c"
+  success: "#12f371"

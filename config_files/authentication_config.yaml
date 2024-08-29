@@ -1,0 +1,63 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS SETTINGS
+# ===========================================================================
+PERMISSIONS:
+  Commands: "getrole" # /getrole
+  Description: "Rangkérelem panel beküldése" # command description
+  CommandsGuildPermissions:
+    "1212249645649235998": ["1212412926871207987"] # add multiple permission roles if needed ['1274989008241557580', '127498900824155125']
+
+# ===========================================================================
+# EMBED SETTINGS
+# ===========================================================================
+EMBED_SETTINGS:
+- GuildID: ['1212249645649235998'] # server 1
+  Color: '#e74c3c' # embed color
+  Title: 'Bloods | Grand World RolePlay' # Title of the embed
+  Description: |
+    **❔ Szerver információk**
+    • [Általános Szabályzat](https://discord.com/channels/1177826974044012615/1177826975608475669)
+    • [Általános Gettószabályok](https://discord.com/channels/1177826974044012615/1193975881836793898)
+    • [Zöldzóna Általános szabályai](https://discord.com/channels/1177826974044012615/1193976006650892379)
+    • [Szabályok Vezetőknek](https://www.youtube.com/channel/UCIGccnkc7Rcq7l8mJkbqyWA)
+
+    **🌍 Weboldalunk**
+    • [Weboldalunk](https://gta5grandworld-rp.hu/)
+
+    **Hitelesítsd magad, hogy több szobához hozzáférj!**
+  Footer: '{guildName}' # {guildName} - replace your server name
+  Timestamp: true
+  Button:
+    Label: 'Hitelesítés' # button label
+    Emoji: '✅' # button emoji / select custom emoji from here: https://emojicombos.com/
+    ButtonColor: 'gray' # gray, red, green, blurple
+  ToggleRoleId: ['1212450922115104839'] # add multiple roles if needed ['1274989008241557580', '127498900824155125']
+
+# ===========================================================================
+# ERROR, ROLE, AND SUCCESS MESSAGES SETTINGS
+# ===========================================================================
+INTERACTION_MESSAGES:
+  NoPermission:
+    Color: '#e74c3c' # no permission color
+    Title: 'Hiányzó jogosultság' # no permission title
+    Description: 'Nincs jogosultságod a parancs használatához!' # no permission message
+  Error:
+    Color: '#e74c3c' # error color
+    Title: 'Hiba' # error title
+    Description: 'Hiba történt a parancs végrehajtása közben!' # error message
+  RoleNotFound:
+    Color: '#e74c3c' # role not found color
+    Title: 'Hiba' # role not found title
+    Description: 'A szerepkör nem található.' # role not found message
+  RoleRemoved:
+    Color: '#e74c3c' # role removed color
+    Title: 'Szerepkör eltávolítva' # role removed title
+    Description: 'A {roleName} szerepkör el lett távolítva rólad.' # role removed message
+  RoleAdded:
+    Color: '#2ecc71' # role added color
+    Title: 'Szerepkör hozzáadva' # role added title
+    Description: 'Sikeresen hitelesítetted magad. Új rangod: {roleName}' # role added message / {roleName} - replace role name
+  Success:
+    Color: '#3498db' # success color
+    Title: 'Panel beküldve' # success title
+    Description: 'Rangkérelem panel sikeresen beküldve' # panel sent success message

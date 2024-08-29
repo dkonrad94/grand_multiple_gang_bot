@@ -1,0 +1,124 @@
+# ===========================================================================
+#  PERMISSION & COMMANDS SETTINGS
+# ===========================================================================
+PERMISSIONS:
+  Commands: "timeout" # Parancs neve
+  Description: "Felhasználó felfüggesztése a szerveren" # Parancs leírása
+  Options:
+    Target:
+      Name: "target" # A célzott felhasználó kiválasztásához
+      Description: "Válaszd ki a felhasználót"
+    Duration:
+      Name: "duration" # Az időtartam opció neve
+      Description: "Időtartam"
+  CommandsGuildPermissions:
+    "1212249645649235998": ["1212412926871207987"] # add multiple permission roles if needed
+
+
+# ===========================================================================
+#  TIMEOUT REASON MODALS
+# ===========================================================================
+REASON_MODALS:
+  Enabled: true # Ha igaz, akkor a timeout parancs indoklását kérni fogja
+  ReasonModal:
+    Title: "Felfüggesztés indoklása"
+    Description: "Indok megadása a felfüggesztéshez"
+
+
+# ===========================================================================
+#  TIMEOUT DURATIONS
+# ===========================================================================
+TIMEOUT_DURATIONS_LABELS:
+  "60 seconds": "60 másodperc"
+  "5 minutes": "5 perc"
+  "10 minutes": "10 perc"
+  "1 hour": "1 óra"
+  "1 day": "1 nap"
+  "1 week": "1 hét"
+
+
+# ===========================================================================
+#  LOG CHANNELS
+# ===========================================================================
+LOGS_SETTINGS:
+  Enabled: true
+  LogChannel:
+    "1212249645649235998": "1278461573538512999" # Guild és log channel ID párosítások
+
+
+# ===========================================================================
+#  LANGUAGE
+# ===========================================================================
+TRANSLATIONS:
+  Errors:
+    NoPermission: "Nincs jogosultságod ehhez a parancshoz!"
+    TimeoutError: "Ezt a személyt nem tudtuk felfüggeszteni."
+    HigherPermission: "Ezt a felhasználót nem tudod felfüggeszteni magasabb jogosultság miatt."
+    ExecutionError: "Hiba történt a felhasználó timeoutolása közben."
+  Success:
+    TimeoutSuccess: "{userTag}-ot sikeresen felfeggesztetted a szerveren.."
+  Log:
+    Title: " • Felhasználó felfüggesztve | Parancs: [Timeout]"
+    DmSuccess: "Felhasználót sikeresen értesítettük."
+    DmFailed: "Felhasználót értesítése sikertelen."
+    Fields:
+      Field_1:
+        Title: "Moderátor"
+        Value: "<@{moderator}>"
+      Field_2:
+        Title: "Moderátor neve"
+        Value: "{moderatorName}"
+      Field_3:
+        Title: "Moderátor ID"
+        Value: "{moderatorID}"
+      Field_4:
+        Title: "Felfüggesztett tag"
+        Value: "<@{targetUser}>"
+      Field_5:
+        Title: "Felfüggesztett neve"
+        Value: "{targetUserName}"
+      Field_6:
+        Title: "Felfüggesztett ID"
+        Value: "{targetUserID}"
+      Field_7:
+        Title: "Szerver neve"
+        Value: "{guildName}"
+      Field_8:
+        Title: "Lejár ekkor"
+        Value_minute: "{timeoutMinute}"
+        Value_second: "{timeoutSecond} másodperc múlva"
+        EndTime: "Lejárt"
+      Field_9:
+        Reason: "Indoklás"
+        Value: "{reason}"
+    Footer: "Timeout Log - {guildName}"
+  DM:
+    Title: " • Értesítés"
+    Description: "{guildName} szerveren fiókod felfüggesztették."
+    Fields:
+      Field_1:
+        Title: "Moderátor"
+        Value: "{moderatorName}"
+      Field_2:
+        Title: "Szerver"
+        Value: "{guildName}"
+      Field_3:
+        Title: "Lejár ekkor"
+        Value_minute: "{timeoutMinute}"
+        Value_second: "{timeoutSecond} másodperc múlva"
+        EndTime: "Lejárt"
+      Field_4:
+        Title: "Indoklás"
+        Value: "{reason}"
+    Footer: "{guildName}"
+
+# ===========================================================================
+#  EMBED COLORS
+# ===========================================================================
+EMBED_COLORS:
+  Default: "#5D6D7E"
+  TimeoutSuccess: "#27AE60"
+  TimeoutFail: "#E74C3C"
+  Log: "#3498DB"
+  DM: "#d68910"
+  DMFailed: "#E59866"

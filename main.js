@@ -7,7 +7,6 @@ const path = require('path');
 const activityManager = require('./events/botActivity');
 const cacheData = require('./events/cacheData');
 const Table = require('cli-table3');
-//@dkonrad94
 let config;
 try {
     const fileContents = fs.readFileSync('./first_setup.yaml', 'utf8');
